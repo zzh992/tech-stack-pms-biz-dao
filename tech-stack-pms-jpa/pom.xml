@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>tech.stack.pms.jpa</groupId>
+	<artifactId>tech-stack-pms-jpa</artifactId>
+	<version>0.0.1</version>
+	<name>tech-stack-pms-jpa</name>
+	<description>tech-stack-pms-jpa</description>
+	
+	<dependencies>
+	
+		<!-- PERSISTENCE begin -->
+		<!-- hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.3.7.Final</version>
+		</dependency>
+
+		<!-- spring data access -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<!-- <version>1.7.1.RELEASE</version> -->
+			<version>1.4.5.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>tech.stack.pms.dao</groupId>
+			<artifactId>tech-stack-pms-dao</artifactId>
+			<version>0.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>tech.stack.component</groupId>
+			<artifactId>tech-stack-component</artifactId>
+			<version>0.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- compiler插件, 设定JDK版本 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
