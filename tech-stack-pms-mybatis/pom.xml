@@ -6,19 +6,24 @@
 	<version>0.0.1</version>
 	<name>tech-stack-pms-mybatis</name>
 	<description>tech-stack-pms-mybatis</description>
+	
+	<properties>
+		<mybatis.version>3.3.0</mybatis.version>
+		<mybatis-spring.version>1.2.3</mybatis-spring.version>
+	</properties>
 
 	<dependencies>
 		<!-- Mybatis Dependency Begin -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.2.2</version>
+			<version>${mybatis.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
-			<version>1.2.0</version>
+			<version>${mybatis-spring.version}</version>
 		</dependency>
 		<!-- Mybatis Dependency End -->
 	
