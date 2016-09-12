@@ -8,7 +8,7 @@ import com.techstack.pms.dao.jpa.entity.Menu;
 
 public interface ActionDao extends BaseRepository<Action, Long> {
 	
-	public List<Action> findByRelevantMenu(Menu relevantMenu);
+	//public List<Action> findByRelevantMenu(Menu relevantMenu);
 
 	public List<Action> findByIdIn(List<Long> idList);
 

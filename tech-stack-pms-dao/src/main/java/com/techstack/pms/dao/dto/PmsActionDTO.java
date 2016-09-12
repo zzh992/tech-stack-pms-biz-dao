@@ -20,11 +20,9 @@ public class PmsActionDTO extends PmsBaseDTO {
 	/**	权限描述	*/
 	private String remark;
 	
-	/**	关联菜单	*/
-	private Long menuId;
+	private Long parentActionId;
 	
-	/**	关联菜单名称	*/
-	private String menuName;
+	private String actionType;
 
 	/**
 	 * @return 权限名称
@@ -68,34 +66,20 @@ public class PmsActionDTO extends PmsBaseDTO {
 		this.remark = remark;
 	}
 
-	/**
-	 * @return 关联菜单
-	 */
-	public Long getMenuId() {
-		return menuId;
+	public Long getParentActionId() {
+		return parentActionId;
 	}
 
-	/**
-	 * @param 关联菜单
-	 */
-	public void setMenuId(Long menuId) {
-		this.menuId = menuId;
+	public void setParentActionId(Long parentActionId) {
+		this.parentActionId = parentActionId;
 	}
 
-	/**
-	 * @return 关联菜单名称
-	 */
-	public String getMenuName() {
-		return menuName;
+	public String getActionType() {
+		return actionType;
 	}
 
-	/**
-	 * @param 关联菜单名称
-	 */
-	public void setMenuName(String menuName) {
-		this.menuName = menuName;
+	public void setActionType(String actionType) {
+		this.actionType = actionType;
 	}
-
-	
 
 }

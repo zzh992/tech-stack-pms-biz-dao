@@ -105,7 +105,7 @@ public class PmsActionDaoFacadeImpl implements PmsActionDaoFacade {
 
 	@Override
 	public List<PmsActionDTO> listActionByMenuId(Long menuId) {
-		Menu relevantMenu = new Menu();
+		/*Menu relevantMenu = new Menu();
 		relevantMenu.setId(menuId);
 		List<Action> actionList = actionDao.findByRelevantMenu(relevantMenu);
 		List<PmsActionDTO> pmsActionDTOList = new ArrayList<PmsActionDTO>();
@@ -114,7 +114,8 @@ public class PmsActionDaoFacadeImpl implements PmsActionDaoFacade {
 				pmsActionDTOList.add(PmsActionDTOMapper.toPmsActionDTO(action));
 			}
 		}
-		return pmsActionDTOList;
+		return pmsActionDTOList;*/
+		return null;
 	}
 
 	@Override

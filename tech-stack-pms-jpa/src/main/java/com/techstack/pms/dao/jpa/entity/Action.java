@@ -7,8 +7,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 @Entity
 @Table(name = "PMS_ACTION")
@@ -23,9 +26,9 @@ public class Action extends BaseEntity {
 	
 	private List<Role> roles = new ArrayList<Role>();
 
-	private Menu relevantMenu;
+	private String actionType;  //GROUP, PERMISSION
 	
-	private String menuName;
+	private Action parentAction;
 
 	@Column(name="ACTION_NAME")
 	public String getActionName() {
@@ -54,25 +57,6 @@ public class Action extends BaseEntity {
 		this.remark = remark;
 	}
 
-	@OneToOne
-	@JoinColumn(name = "MENU_ID", referencedColumnName = "ID")
-	public Menu getRelevantMenu() {
-		return relevantMenu;
-	}
-
-	public void setRelevantMenu(Menu relevantMenu) {
-		this.relevantMenu = relevantMenu;
-	}
-
-	@Column(name="MENU_NAME")
-	public String getMenuName() {
-		return menuName;
-	}
-
-	public void setMenuName(String menuName) {
-		this.menuName = menuName;
-	}
-
 	@ManyToMany(mappedBy = "actions")
 	public List<Role> getRoles() {
 		return roles;
@@ -80,6 +64,26 @@ public class Action extends BaseEntity {
 
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
+	}
+
+	@Column(name="ACTION_TYPE")
+	public String getActionType() {
+		return actionType;
+	}
+
+	public void setActionType(String actionType) {
+		this.actionType = actionType;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "PARENT_ID", nullable=true, referencedColumnName = "ID")	
+	@NotFound(action = NotFoundAction.IGNORE)
+	public Action getParentAction() {
+		return parentAction;
+	}
+
+	public void setParentAction(Action parentAction) {
+		this.parentAction = parentAction;
 	}
 
 }

@@ -33,11 +33,6 @@ public class PmsActionBiz {
 	 * @return List<PmsAction>
 	 */
 	public List<PmsActionDTO> findActionsByIds(List<Long> ids) {
-		/*List<String> idarr = Arrays.asList(ids.split(","));
-		List<Long> idList = new ArrayList<Long>();
-		for(String id : idarr){
-			idList.add(Long.parseLong(id));
-		}*/
 		return pmsActionDaoFacade.findActionsByIds(ids);
 	}
 
@@ -169,13 +164,6 @@ public class PmsActionBiz {
 			}
 		}
 		return actionIds;
-		/*StringBuffer actionIds = new StringBuffer();
-		if (rmList != null && !rmList.isEmpty()) {
-			for (PmsRoleActionDTO rm : rmList) {
-				actionIds.append(rm.getActionId()).append(",");
-			}
-		}
-		return actionIds.toString();*/
 	}
 	
 	/**
@@ -185,27 +173,12 @@ public class PmsActionBiz {
 	 * @return String
 	 */
 	public List<Long> getActionIdsByRoleIds(List<Long> roleIds) {
-		// 得到角色－权限表中roleiId在ids中的所有关联对象
-		/*List<String> roldIdArr = Arrays.asList(roleIds.split(","));
-		List<Long> roldIdList = new ArrayList<Long>();
-		for(String roleId : roldIdArr){
-			roldIdList.add(Long.parseLong(roleId));
-		}*/
 		List<PmsRoleActionDTO> listPmsRoleActions = pmsActionDaoFacade.listRoleActionByRoleIds(roleIds);
 		List<Long> actionIds = new ArrayList<Long>();
 		for (PmsRoleActionDTO pmsRoleAction : listPmsRoleActions) {
 			actionIds.add(pmsRoleAction.getActionId());
 		}
 		return actionIds;
-		/*StringBuffer actionIdsBuf = new StringBuffer("");
-		for (PmsRoleActionDTO pmsRoleAction : listPmsRoleActions) {
-			actionIdsBuf.append(pmsRoleAction.getActionId()).append(",");
-		}
-		String actionIds = actionIdsBuf.toString();
-		if (!StringUtils.isEmpty(actionIds)) {
-			actionIds = actionIds.substring(0, actionIds.length() - 1); // 去掉最后一个逗号
-		}
-		return actionIds;*/
 	}
 
 }

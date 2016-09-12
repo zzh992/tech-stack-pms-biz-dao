@@ -26,13 +26,11 @@ public class PmsAction extends BaseEntity {
 	@Column(name="REMARK")
 	private String remark;
 	
-	/**	关联菜单	*/
-	@Column(name="MENU_ID")
-	private Long menuId;
+	@Column(name="PARENT_ID")
+	private Long parentId;
 	
-	/**	关联菜单名称	*/
-	@Column(name="MENU_NAME")
-	private String menuName;
+	@Column(name="ACTION_TYPE")
+	private String actionType;
 
 	/**
 	 * @return 权限名称
@@ -76,34 +74,20 @@ public class PmsAction extends BaseEntity {
 		this.remark = remark;
 	}
 
-	/**
-	 * @return 关联菜单
-	 */
-	public Long getMenuId() {
-		return menuId;
+	public Long getParentId() {
+		return parentId;
 	}
 
-	/**
-	 * @param 关联菜单
-	 */
-	public void setMenuId(Long menuId) {
-		this.menuId = menuId;
+	public void setParentId(Long parentId) {
+		this.parentId = parentId;
 	}
 
-	/**
-	 * @return 关联菜单名称
-	 */
-	public String getMenuName() {
-		return menuName;
+	public String getActionType() {
+		return actionType;
 	}
 
-	/**
-	 * @param 关联菜单名称
-	 */
-	public void setMenuName(String menuName) {
-		this.menuName = menuName;
+	public void setActionType(String actionType) {
+		this.actionType = actionType;
 	}
-
-	
 
 }
